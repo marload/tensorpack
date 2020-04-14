@@ -187,10 +187,7 @@ class DumpTensorAsImage(Callback):
         """
         op_name, self.tensor_name = get_op_tensor_name(tensor_name)
         self.func = map_func
-        if prefix is None:
-            self.prefix = op_name
-        else:
-            self.prefix = prefix
+        self.prefix = op_name if prefix is None else prefix
         self.log_dir = logger.get_logger_dir()
         self.scale = scale
 
